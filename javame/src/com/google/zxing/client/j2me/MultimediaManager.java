@@ -19,21 +19,23 @@ package com.google.zxing.client.j2me;
 import javax.microedition.media.Controllable;
 
 /**
- * <p>Implemented by {@link com.google.zxing.client.j2me.DefaultMultimediaManager} and
- * {@link com.google.zxing.client.j2me.AdvancedMultimediaManager} in order to dynamically
- * load support for JSR-234 APIs where possible.</p>
- *
+ * <p>
+ * Implemented by {@link com.google.zxing.client.j2me.DefaultMultimediaManager} and
+ * {@link com.google.zxing.client.j2me.AdvancedMultimediaManager} in order to dynamically load support for JSR-234 APIs
+ * where possible.
+ * </p>
+ * 
  * @author Sean Owen
  * @author Paul Hackenberger
  */
 interface MultimediaManager {
 
-  void setFocus(Controllable player);
+	void setFocus(Controllable player);
 
-  void setZoom(Controllable player);
+	void setZoom(Controllable player);
 
-  void setExposure(Controllable player);
+	void setExposure(Controllable player);
 
-  void setFlash(Controllable player);
+	void setFlash(Controllable player);
 
 }

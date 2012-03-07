@@ -23,49 +23,49 @@ import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Graphics;
 
 /**
- * The main {@link Canvas} onto which the camera's field of view is painted.
- * This class manages decoding via {@link SnapshotThread}.
- *
+ * The main {@link Canvas} onto which the camera's field of view is painted. This class manages decoding via
+ * {@link SnapshotThread}.
+ * 
  * @author Sean Owen
  * @author Simon Flannery
  */
 final class VideoCanvas extends Canvas implements CommandListener {
 
-  private static final Command exit = new Command("Exit", Command.EXIT, 1);
-  private static final Command history = new Command("History", Command.ITEM, 0);
+	private static final Command exit = new Command("Exit", Command.EXIT, 1);
+	private static final Command history = new Command("History", Command.ITEM, 0);
 
-  private final ZXingMIDlet zXingMIDlet;
-  private final SnapshotThread snapshotThread;
+	private final ZXingMIDlet zXingMIDlet;
+	private final SnapshotThread snapshotThread;
 
-  VideoCanvas(ZXingMIDlet zXingMIDlet) {
-    this.zXingMIDlet = zXingMIDlet;
-    addCommand(exit);
-    addCommand(history);
-    setCommandListener(this);
-    snapshotThread = new SnapshotThread(zXingMIDlet);
-    new Thread(snapshotThread).start();
-  }
+	VideoCanvas(ZXingMIDlet zXingMIDlet) {
+		this.zXingMIDlet = zXingMIDlet;
+		addCommand(exit);
+		addCommand(history);
+		setCommandListener(this);
+		snapshotThread = new SnapshotThread(zXingMIDlet);
+		new Thread(snapshotThread).start();
+	}
 
-  protected void paint(Graphics graphics) {
-    // do nothing
-  }
+	protected void paint(Graphics graphics) {
+		// do nothing
+	}
 
-  protected void keyPressed(int keyCode) {
-    // Any valid game key will trigger a capture
-    if (getGameAction(keyCode) != 0) {
-      snapshotThread.continueRun();
-    } else {
-      super.keyPressed(keyCode);
-    }
-  }
+	protected void keyPressed(int keyCode) {
+		// Any valid game key will trigger a capture
+		if (getGameAction(keyCode) != 0) {
+			snapshotThread.continueRun();
+		} else {
+			super.keyPressed(keyCode);
+		}
+	}
 
-  public void commandAction(Command command, Displayable displayable) {
-    int type = command.getCommandType();
-    if (command == history) {
-      zXingMIDlet.historyRequest();
-    } else if (type == Command.EXIT || type == Command.STOP || type == Command.BACK || type == Command.CANCEL) {
-      snapshotThread.stop();
-      zXingMIDlet.stop();
-    }
-  }
+	public void commandAction(Command command, Displayable displayable) {
+		int type = command.getCommandType();
+		if (command == history) {
+			zXingMIDlet.historyRequest();
+		} else if (type == Command.EXIT || type == Command.STOP || type == Command.BACK || type == Command.CANCEL) {
+			snapshotThread.stop();
+			zXingMIDlet.stop();
+		}
+	}
 }

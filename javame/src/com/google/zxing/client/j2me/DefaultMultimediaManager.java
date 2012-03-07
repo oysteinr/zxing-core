@@ -19,22 +19,24 @@ package com.google.zxing.client.j2me;
 import javax.microedition.media.Controllable;
 
 /**
- * <p>Dummy implemenation which does nothing. This is suitable for non-JSR-234 phones.</p>
- *
+ * <p>
+ * Dummy implemenation which does nothing. This is suitable for non-JSR-234 phones.
+ * </p>
+ * 
  * @author Sean Owen
  */
 final class DefaultMultimediaManager implements MultimediaManager {
 
-  public void setFocus(Controllable player) {
-  }
+	public void setFocus(Controllable player) {
+	}
 
-  public void setZoom(Controllable player) {
-  }
+	public void setZoom(Controllable player) {
+	}
 
-  public void setExposure(Controllable player) {
-  }
+	public void setExposure(Controllable player) {
+	}
 
-  public void setFlash(Controllable player) {
-  }
+	public void setFlash(Controllable player) {
+	}
 
 }
