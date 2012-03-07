@@ -1,0 +1,7 @@
+Install instructions:
+
+ - If you use the WTK version 3 or later, uncomment the library specifications in javame/build.xml and comment the 2.5.x packages. Look for the "These are used with WTK..."-messages.
+ - modify the build.properties file
+   * Set the proguard path to the proguard.jar file (include the whole path with the file-name)
+   * Set the root path to the WTK.
+ - 
