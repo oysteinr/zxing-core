@@ -1,7 +1,30 @@
 Install instructions:
 
+Preperation:
  - If you use the WTK version 3 or later, uncomment the library specifications in javame/build.xml and comment the 2.5.x packages. Look for the "These are used with WTK..."-messages.
- - modify the build.properties file
+ - modify the build.properties file, uncomment and...
    * Set the proguard path to the proguard.jar file (include the whole path with the file-name)
    * Set the root path to the WTK.
- - 
+ 
+Building and setting up dev environment (Eclipse)
+- Create a new workspace at javame-improved root
+- Import the projects in eclipse by going:
+  * New -> Project... -> Java project form existing ant file
+  * find the core project, select build.xml and click finish. Repeat for javame.
+- Change JDK compliance to 1.3
+  * Window -> Java -> Compiler -> Compiler compliance level -> 1.3
+  * Hit apply, and refresh workspace
+- Build the core project. Right click build.xml -> run as -> ant build
+- Build javame with same procedure
+- Eclipse wil probably report errors. Troubleshooting: Try building after each step until it successfully builds
+  * Add core.jar from the core package in build path
+  * Add java system library to the build path
+  * Remove JRE_LIB from build path
+
+Building in terminal (from zxing):
+- Make sure you are running the compiler in compability mode with version 1.4 or lower
+- Build the core first: ant -f core/build.xml
+- Then build javame: ant -f javase/build.xml
+
+Deploying
+- Copy Barcode.jar and .jad to mobile device

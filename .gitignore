@@ -1,4 +1,6 @@
-AUTHORS
-build.properties
-CHANGES
-COPYING
+/AUTHORS
+/build.properties
+/CHANGES
+/COPYING
+/.metadata
+*~

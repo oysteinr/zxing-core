@@ -1,6 +1,8 @@
 /build
 /build-test
 /core.jar
+/.classpath
+/.project
 
 *.class
 
