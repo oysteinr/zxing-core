@@ -1,7 +1,3 @@
-/build
-/build-test
-/core.jar
-
 *.class
 
 # Package Files #
