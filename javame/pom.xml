@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -45,28 +46,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>com.sun.wtk</groupId> -->
-		<!-- <artifactId>jsr-179</artifactId> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.openxdata</groupId> -->
-		<!-- <artifactId>mforms-model</artifactId> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.openxdata</groupId> -->
-		<!-- <artifactId>rpn-eval</artifactId> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.bouncycastle</groupId> -->
-		<!-- <artifactId>lcrypto</artifactId> -->
-		<!-- <classifier>j2me</classifier> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>com.jcraft</groupId> -->
-		<!-- <artifactId>jzlib</artifactId> -->
-		<!-- <classifier>j2me</classifier> -->
-		<!-- </dependency> -->
+
 	</dependencies>
 
 	<build>
@@ -114,68 +94,33 @@
 							<!-- org.openxdata.rpneval.Evaluator</option> -->
 							<!-- <option>-keep public class * implements -->
 							<!-- org.openxdata.rpneval.Converter</option> -->
-							<option> -keep public class com.google.zxing.client.j2me.ZXingMIDlet</option>
-							<option> -keep class com.google.zxing.client.j2me.AdvancedMultimediaManager</option>
-							<option> -keep class com.google.zxing.client.j2me.DefaultMultimediaManager</option>
-							<option> -keep class com.google.zxing.client.j2me.MultimediaManager</option>
+							<option> -keep public class
+								com.google.zxing.client.j2me.ZXingMIDlet</option>
+							<option> -keep class
+								com.google.zxing.client.j2me.AdvancedMultimediaManager</option>
+							<option> -keep class
+								com.google.zxing.client.j2me.DefaultMultimediaManager</option>
+							<option> -keep class
+								com.google.zxing.client.j2me.MultimediaManager</option>
 						</options>
 					</proguardOptions>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<!-- <profiles> -->
-	<!-- <profile> -->
-	<!-- <id>debug</id> -->
-	<!-- <activation> -->
-	<!-- <property> -->
-	<!-- <name>debug</name> -->
-	<!-- </property> -->
-	<!-- </activation> -->
-	<!-- <build> -->
-	<!-- <pluginManagement> -->
-	<!-- <plugins> -->
-	<!-- <plugin> -->
-	<!-- <groupId>org.openxdata.mvnplugins</groupId> -->
-	<!-- <artifactId>j2me-maven-plugin</artifactId> -->
-	<!-- <version>2.0.4</version> -->
-	<!-- <configuration> -->
-	<!-- <obfuscate>false</obfuscate> -->
-	<!-- <proguard>false</proguard> -->
-	<!-- <proguardPreverify>false</proguardPreverify> -->
-	<!-- <debugPort>8001</debugPort> -->
-	<!-- </configuration> -->
-	<!-- </plugin> -->
-	<!-- </plugins> -->
-	<!-- </pluginManagement> -->
-	<!-- </build> -->
-	<!-- </profile> -->
-	<!-- <profile> -->
-	<!-- <id>tiny</id> -->
-	<!-- <activation> -->
-	<!-- <property> -->
-	<!-- <name>!debug</name> -->
-	<!-- </property> -->
-	<!-- </activation> -->
-	<!-- <build> -->
-	<!-- <pluginManagement> -->
-	<!-- <plugins> -->
-	<!-- <plugin> -->
-	<!-- <groupId>org.openxdata.mvnplugins</groupId> -->
-	<!-- <artifactId>j2me-maven-plugin</artifactId> -->
-	<!-- <version>2.0.4</version> -->
-	<!-- <configuration> -->
-	<!-- <obfuscate>true</obfuscate> -->
-	<!-- <proguard>true</proguard> -->
-	<!-- <proguardPreverify>true</proguardPreverify> -->
-	<!-- </configuration> -->
-	<!-- </plugin> -->
-	<!-- </plugins> -->
-	<!-- </pluginManagement> -->
-	<!-- </build> -->
-	<!-- </profile> -->
-	<!-- </profiles> -->
+	
+	<profiles>
+		<profile>
+			<id>testing-hello</id>
+			<dependencies>
+				<dependency>
+					<groupId>com.google.test</groupId>
+					<artifactId>hello-world</artifactId>
+					<version>1.0-SNAPSHOT</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 
 	<properties>
 		<wtk.home>${env.WTK_HOME}</wtk.home>

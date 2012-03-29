@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-
 
 	<groupId>com.google.zxing</groupId>
 	<artifactId>javame-improved</artifactId>
@@ -50,6 +48,7 @@
 
 	<modules>
 		<module>core</module>
+		<module>hello-world</module>
 		<module>javame</module>
 	</modules>
 
@@ -75,33 +74,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- <dependency> -->
-			<!-- <groupId>org.bouncycastle</groupId> -->
-			<!-- <artifactId>lcrypto</artifactId> -->
-			<!-- <version>146</version> -->
-			<!-- <classifier>j2me</classifier> -->
-			<!-- </dependency> -->
-			<!-- <dependency> -->
-			<!-- <groupId>com.jcraft</groupId> -->
-			<!-- <artifactId>jzlib</artifactId> -->
-			<!-- <version>1.0.7</version> -->
-			<!-- <classifier>j2me</classifier> -->
-			<!-- </dependency> -->
-			<!-- <dependency> -->
-			<!-- <groupId>org.openxdata</groupId> -->
-			<!-- <artifactId>rpn-eval</artifactId> -->
-			<!-- <version>2.0-SNAPSHOT</version> -->
-			<!-- </dependency> -->
-			<!-- <dependency> -->
-			<!-- <groupId>org.openxdata</groupId> -->
-			<!-- <artifactId>mforms-model</artifactId> -->
-			<!-- <version>2.0-SNAPSHOT</version> -->
-			<!-- </dependency> -->
-			<!-- <dependency> -->
-			<!-- <groupId>org.openxdata</groupId> -->
-			<!-- <artifactId>mforms-utils</artifactId> -->
-			<!-- <version>2.0-SNAPSHOT</version> -->
-			<!-- </dependency> -->
 			<dependency>
 				<groupId>com.google.zxing</groupId>
 				<artifactId>core</artifactId>
@@ -127,12 +99,6 @@
 			</dependency>
 			<dependency>
 				<groupId>com.sun.wtk</groupId>
-				<artifactId>jsr-179</artifactId>
-				<version>1.0.1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.sun.wtk</groupId>
 				<artifactId>jsr-234</artifactId>
 				<version>1.0</version>
 				<scope>provided</scope>
@@ -143,18 +109,7 @@
 				<version>3.8</version>
 				<scope>test</scope>
 			</dependency>
-			<!-- <dependency> -->
-			<!-- <groupId>org.slf4j</groupId> -->
-			<!-- <artifactId>slf4j-api</artifactId> -->
-			<!-- <version>1.6.1</version> -->
-			<!-- <scope>test</scope> -->
-			<!-- </dependency> -->
-			<!-- <dependency> -->
-			<!-- <groupId>org.slf4j</groupId> -->
-			<!-- <artifactId>slf4j-log4j12</artifactId> -->
-			<!-- <version>1.6.1</version> -->
-			<!-- <scope>test</scope> -->
-			<!-- </dependency> -->
+
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
@@ -210,6 +165,17 @@
 		</pluginManagement>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>testing-hello</id>
+			<activation>
+				<property>
+					<name>testing</name>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
+
 	<scm>
 		<connection>scm:svn:https://svn.openxdata.org/J2ME/trunk</connection>
 		<developerConnection>scm:svn:https://svn.openxdata.org/J2ME/trunk</developerConnection>
@@ -232,4 +198,3 @@
 	</properties>
 
 </project>
-
