@@ -1,4 +1,13 @@
-Install instructions:
+:::  Install instructions :::
+
+:: Maven ::
+
+ - Set env variable WTK-home to the root location of your installed sun wireless toolkit
+ - you may have to add jsr234 to the maven repo manually
+ - build: mvn clean install
+ - jar located in /target
+
+::ANT ::
 
 Preperation:
  - If you use the WTK version 3 or later, uncomment the library specifications in javame/build.xml and comment the 2.5.x packages. Look for the "These are used with WTK..."-messages.
