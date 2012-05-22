@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openxdata</groupId>
+	<artifactId>zxing-core</artifactId>
+	<packaging>jar</packaging>
+	<version>1.7</version>
+	<description>Core barcode encoding/decoding library</description>
+	<name>ZXing Core</name>
+	<url>http://code.google.com/p/zxing</url>
+	<inceptionYear>2007</inceptionYear>
+	<issueManagement>
+		<system>Google Code</system>
+		<url>http://code.google.com/p/zxing/issues/list</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Daniel Switkin</name>
+			<email>dswitkin@gmail.com</email>
+		</developer>
+		<developer>
+			<name>Sean Owen</name>
+			<email>srowen@gmail.com</email>
+		</developer>
+	</developers>
+</project>
